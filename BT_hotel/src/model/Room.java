@@ -1,6 +1,10 @@
+package model;
+
+import model.Person;
+
 import java.io.Serializable;
 
-public class Room extends Person implements Serializable {
+public class Room extends Person implements Serializable{
     private int dateHotel;
     private String categoryHotel;
     private double priceHotel;
@@ -51,6 +55,5 @@ public class Room extends Person implements Serializable {
                 "Loại phòng: " + categoryHotel + "\n" +
                 "Giá phòng: " + priceHotel
                 ;
-
     }
 }

@@ -1,7 +1,10 @@
+package storage;
+
+import model.Room;
+
 import java.io.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ReadWriterFile {
     public static final String HOTEL_TXT = "hotel.txt";
