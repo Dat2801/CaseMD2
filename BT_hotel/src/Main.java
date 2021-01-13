@@ -20,8 +20,9 @@ public class Main {
             System.out.println("3. Tìm kiếm khách thuê");
             System.out.println("4. Xóa khách thuê");
             System.out.println("5. Sửa thông tin khách thuê");
-            System.out.println("6. Thanh toán phòng");
-            System.out.println("7. Thoát");
+            System.out.println("6. Sắp xếp theo tên người thuê");
+            System.out.println("7. Thanh toán phòng");
+            System.out.println("8. Thoát");
             choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
@@ -41,9 +42,12 @@ public class Main {
                     edit();
                     break;
                 case 6:
-                    bill();
+                    programManager.sortRoom();
                     break;
                 case 7:
+                    bill();
+                    break;
+                case 8:
                     System.exit(0);
                     break;
             }

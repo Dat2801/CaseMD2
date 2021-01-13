@@ -3,9 +3,7 @@ package service;
 import model.Room;
 import storage.ReadWriterFile;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ProgramManager {
     Scanner scanner = new Scanner(System.in);
@@ -111,6 +109,19 @@ public class ProgramManager {
     public void editRoom(int index, Room room) {
         rooms.set(index, room);
         ReadWriterFile.writerFile(rooms);
+    }
+
+    class SortRoom implements Comparator<Room>{
+        @Override
+        public int compare(Room room1, Room room2) {
+            return  room1.getName().compareTo(room2.getName());
+        }
+    }
+    public void sortRoom(){
+        Collections.sort(rooms, new SortRoom());
+        System.out.println("----Sắp xếp thành công----");
+        ReadWriterFile.writerFile(rooms);
+
     }
 }
 
