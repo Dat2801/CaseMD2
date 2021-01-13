@@ -1,59 +1,56 @@
 package model;
 
-import model.Person;
-
 import java.io.Serializable;
 
 public class Room extends Person implements Serializable{
-    private int dateHotel;
-    private String categoryHotel;
-    private double priceHotel;
+    private int dateOfStay;
+    private String categoryRoom;
+    private double priceRoom;
 
-    public Room(String name, String date, String id, int dateHotel, String categoryHotel, double priceHotel) {
+    public Room(String name, String date, String id, int dateOfStay, String categoryRoom, double priceRoom) {
         super(name, date, id);
-        this.dateHotel = dateHotel;
-        this.categoryHotel = categoryHotel;
-        this.priceHotel = priceHotel;
+        this.dateOfStay = dateOfStay;
+        this.categoryRoom = categoryRoom;
+        this.priceRoom = priceRoom;
     }
 
     public Room(){}
 
-    public int getDateHotel() {
-        return dateHotel;
+    public int getDateOfStay() {
+        return dateOfStay;
     }
 
-    public void setDateHotel(int dateHotel) {
-        this.dateHotel = dateHotel;
+    public void setDateOfStay(int dateOfStay) {
+        this.dateOfStay = dateOfStay;
     }
 
-    public String getCategoryHotel() {
-        return categoryHotel;
+    public String getCategoryRoom() {
+        return categoryRoom;
     }
 
-    public void setCategoryHotel(String categoryHotel) {
-        this.categoryHotel = categoryHotel;
+    public void setCategoryRoom(String categoryRoom) {
+        this.categoryRoom = categoryRoom;
     }
 
-    public double getPriceHotel() {
-        return priceHotel;
+    public double getPriceRoom() {
+        return priceRoom;
     }
 
-    public void setPriceHotel(double priceHotel) {
-        this.priceHotel = priceHotel;
+    public void setPriceRoom(double priceRoom) {
+        this.priceRoom = priceRoom;
     }
-
 
     public double getTotal(){
-        return (getDateHotel() * getPriceHotel());
+        return (getDateOfStay() * getPriceRoom());
     }
 
     @Override
     public String  toString() {
         return "--------Thông tin khách thuê--------"+ "\n" +
                  super.toString() +
-                "Số ngày thuê: " + dateHotel + "\n"+
-                "Loại phòng: " + categoryHotel + "\n" +
-                "Giá phòng: " + priceHotel
+                "Số ngày thuê: " + dateOfStay + "\n"+
+                "Loại phòng: " + categoryRoom + "\n" +
+                "Giá phòng: " + priceRoom
                 ;
     }
 }

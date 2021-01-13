@@ -13,7 +13,7 @@ public class ProgramManager {
         this.rooms = r;
     }
 
-    public List<Room> getRooms() {
+    public ArrayList<Room> getRooms() {
         return rooms;
     }
 
@@ -41,9 +41,9 @@ public class ProgramManager {
                     , room.getName()
                     , room.getDate()
                     , room.getId()
-                    , room.getDateHotel()
-                    , room.getCategoryHotel()
-                    , room.getPriceHotel() + "vnđ");
+                    , room.getDateOfStay()
+                    , room.getCategoryRoom()
+                    , room.getPriceRoom() + "vnđ");
         }
         ReadWriterFile.readFile();
     }
@@ -74,9 +74,9 @@ public class ProgramManager {
                         , room.getName()
                         , room.getDate()
                         , room.getId()
-                        , room.getDateHotel()
-                        , room.getCategoryHotel()
-                        , room.getPriceHotel() + "vnđ");
+                        , room.getDateOfStay()
+                        , room.getCategoryRoom()
+                        , room.getPriceRoom() + "vnđ");
             }
         }
     }
@@ -97,9 +97,9 @@ public class ProgramManager {
                         , room.getName()
                         , room.getDate()
                         , room.getId()
-                        , room.getDateHotel()
-                        , room.getCategoryHotel()
-                        , room.getPriceHotel() + "vnđ"
+                        , room.getDateOfStay()
+                        , room.getCategoryRoom()
+                        , room.getPriceRoom() + "vnđ"
                         , room.getTotal() + "vnđ");
             }
         }

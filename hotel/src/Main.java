@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static ArrayList<Room> r = ReadWriterFile.readFile();
-    static ProgramManager programManager = new ProgramManager(r);
+    static ArrayList<Room> roomList = ReadWriterFile.readFile();
+    static ProgramManager programManager = new ProgramManager(roomList);
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
