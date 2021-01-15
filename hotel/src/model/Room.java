@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Room extends Person implements Serializable{
+public class Room extends Person implements Serializable {
     private int dateOfStay;
     private String categoryRoom;
     private double priceRoom;
@@ -14,7 +14,8 @@ public class Room extends Person implements Serializable{
         this.priceRoom = priceRoom;
     }
 
-    public Room(){}
+    public Room() {
+    }
 
     public int getDateOfStay() {
         return dateOfStay;
@@ -40,15 +41,15 @@ public class Room extends Person implements Serializable{
         this.priceRoom = priceRoom;
     }
 
-    public double getTotal(){
+    public double getTotal() {
         return (getDateOfStay() * getPriceRoom());
     }
 
     @Override
-    public String  toString() {
-        return "--------Thông tin khách thuê--------"+ "\n" +
-                 super.toString() +
-                "Số ngày thuê: " + dateOfStay + "\n"+
+    public String toString() {
+        return "--------Thông tin khách thuê--------" + "\n" +
+                super.toString() +
+                "Số ngày thuê: " + dateOfStay + "\n" +
                 "Loại phòng: " + categoryRoom + "\n" +
                 "Giá phòng: " + priceRoom
                 ;

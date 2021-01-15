@@ -12,7 +12,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
-
         do {
             System.out.println("\n" + "-----Chức năng-----");
             System.out.println("1. Thêm khách thuê");
@@ -76,7 +75,7 @@ public class Main {
         double priceHotel = Double.parseDouble(scanner.nextLine());
 
         Room room = new Room(name, date, id, dateHotel, categoryHotel, priceHotel);
-        programManager.addHotel(room);
+        programManager.addRoom(room);
         System.out.println("------->Thêm mới thành công<-------");
     }
 
@@ -95,11 +94,10 @@ public class Main {
     public static void search() {
         try {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Nhập vào số chứng minh thư");
+            System.out.println("Nhập vào chứng minh thư");
             String id = scanner.nextLine();
             programManager.searchRoom(id);
         } catch (Exception e) {
-
             System.out.println("Nhập sai mời nhập lại");
         }
     }

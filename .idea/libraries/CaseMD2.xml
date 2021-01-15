@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="CaseMD2">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/hotel/src" />
+    </SOURCES>
+  </library>
+</component>

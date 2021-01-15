@@ -3,15 +3,16 @@ package model;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class Person implements  Serializable  {
+public class Person implements Serializable {
 
     private String name;
     private String date;
     private String id;
 
-    public Person(){}
+    public Person() {
+    }
 
-    public Person(String name, String date,String id) {
+    public Person(String name, String date, String id) {
         this.name = name;
         this.date = date;
         this.id = id;
@@ -37,15 +38,16 @@ public class Person implements  Serializable  {
         return id;
     }
 
-    public void setId(String  id) {
+    public void setId(String id) {
         this.id = id;
     }
+
     @Override
     public String toString() {
         return
                 "Tên khách thuê: " + name + '\n' +
-                "Ngày sinh: " + date + "\n"+
-                "Chứng minh thư: " + id + "\n"
+                        "Ngày sinh: " + date + "\n" +
+                        "Chứng minh thư: " + id + "\n"
                 ;
     }
 }

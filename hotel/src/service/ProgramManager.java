@@ -21,7 +21,7 @@ public class ProgramManager {
         this.rooms = rooms;
     }
 
-    public void addHotel(Room room) {
+    public void addRoom(Room room) {
         rooms = ReadWriterFile.readFile();
         rooms.add(room);
         ReadWriterFile.writerFile(rooms);
@@ -76,7 +76,7 @@ public class ProgramManager {
                         , room.getId()
                         , room.getDateOfStay()
                         , room.getCategoryRoom()
-                        , room.getPriceRoom() + "vnđ");
+                        , room.getPriceRoom() + "vnđ" +"\n");
             }
         }
     }
@@ -100,7 +100,7 @@ public class ProgramManager {
                         , room.getDateOfStay()
                         , room.getCategoryRoom()
                         , room.getPriceRoom() + "vnđ"
-                        , room.getTotal() + "vnđ");
+                        , room.getTotal() + "vnđ" + "\n");
             }
         }
         ReadWriterFile.writerFile(rooms);
@@ -111,13 +111,14 @@ public class ProgramManager {
         ReadWriterFile.writerFile(rooms);
     }
 
-    class SortRoom implements Comparator<Room>{
+    class SortRoom implements Comparator<Room> {
         @Override
         public int compare(Room room1, Room room2) {
-            return  room1.getName().compareTo(room2.getName());
+            return room1.getName().compareTo(room2.getName());
         }
     }
-    public void sortRoom(){
+
+    public void sortRoom() {
         Collections.sort(rooms, new SortRoom());
         System.out.println("----Sắp xếp thành công----");
         ReadWriterFile.writerFile(rooms);
