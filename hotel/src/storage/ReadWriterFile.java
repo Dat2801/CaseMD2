@@ -14,7 +14,6 @@ public class ReadWriterFile {
             FileOutputStream fileOutputStream = new FileOutputStream(HOTEL_TXT);
             ObjectOutputStream obj = new ObjectOutputStream(fileOutputStream);
             obj.writeObject(rooms);
-            obj.flush();
             obj.close();
             fileOutputStream.close();
         } catch (Exception e) {

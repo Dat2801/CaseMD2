@@ -1,5 +1,6 @@
 package service;
 
+import com.sun.xml.internal.ws.addressing.WsaTubeHelper;
 import model.Room;
 import storage.ReadWriterFile;
 
@@ -28,7 +29,7 @@ public class ProgramManager {
     }
 
     public void showRoom() {
-        System.out.println("---------Thông tin khách thuê trọ-------");
+        System.out.println("-------------------- Thông tin khách thuê trọ --------------------");
         System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
                 , "Tên khách thuê"
                 , "Ngày sinh"
@@ -55,7 +56,7 @@ public class ProgramManager {
                 i--;
             }
         }
-        System.out.println("Xóa khách trọ thành công");
+        System.out.println("------Xóa khách trọ thành công-----");
         ReadWriterFile.writerFile(rooms);
     }
 
@@ -70,13 +71,13 @@ public class ProgramManager {
                         , "Ngày trọ"
                         , "Loại phòng"
                         , "Giá phòng");
-                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
+                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%"
                         , room.getName()
                         , room.getDate()
                         , room.getId()
                         , room.getDateOfStay()
                         , room.getCategoryRoom()
-                        , room.getPriceRoom() + "vnđ" +"\n");
+                        , room.getPriceRoom() + "vnđ" + "\n");
             }
         }
     }

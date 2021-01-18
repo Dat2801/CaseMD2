@@ -13,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
         do {
-            System.out.println("\n" + "-----Chức năng-----");
+            System.out.println("\n" + "----- Chức năng -----");
             System.out.println("1. Thêm khách thuê");
             System.out.println("2. Hiển thị khách thuê");
             System.out.println("3. Tìm kiếm khách thuê");
@@ -22,6 +22,7 @@ public class Main {
             System.out.println("6. Sắp xếp theo tên người thuê");
             System.out.println("7. Thanh toán phòng");
             System.out.println("8. Thoát");
+            System.out.println("----- Mời bạn chọn chức năng -----");
             choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
@@ -54,29 +55,33 @@ public class Main {
     }
 
     public static void add() {
-        Scanner scanner = new Scanner(System.in);
+        try {
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Nhập tên người thuê");
-        String name = scanner.nextLine();
+            System.out.println("Nhập tên người thuê");
+            String name = scanner.nextLine();
 
-        System.out.println("Nhập ngày sinh người thuê");
-        String date = scanner.nextLine();
+            System.out.println("Nhập ngày sinh người thuê");
+            String date = scanner.nextLine();
 
-        System.out.println("Nhập chứng minh thư");
-        String id = scanner.nextLine();
+            System.out.println("Nhập chứng minh thư");
+            String id = scanner.nextLine();
 
-        System.out.println("Nhập ngày trọ");
-        int dateHotel = Integer.parseInt(scanner.nextLine());
+            System.out.println("Nhập ngày trọ");
+            int dateHotel = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Nhập loại phòng");
-        String categoryHotel = scanner.nextLine();
+            System.out.println("Nhập loại phòng");
+            String categoryHotel = scanner.nextLine();
 
-        System.out.println("Nhập giá phòng");
-        double priceHotel = Double.parseDouble(scanner.nextLine());
+            System.out.println("Nhập giá phòng");
+            double priceHotel = Double.parseDouble(scanner.nextLine());
 
-        Room room = new Room(name, date, id, dateHotel, categoryHotel, priceHotel);
-        programManager.addRoom(room);
-        System.out.println("------->Thêm mới thành công<-------");
+            Room room = new Room(name, date, id, dateHotel, categoryHotel, priceHotel);
+            programManager.addRoom(room);
+            System.out.println("------->Thêm mới thành công<-------");
+        } catch (Exception e) {
+            System.out.println("Nhập sai mời bạn nhập lại");
+        }
     }
 
     public static void delete() {
@@ -85,7 +90,6 @@ public class Main {
             System.out.println("Nhập vào số chứng minh thư");
             String id = scanner.nextLine();
             programManager.deleteRoom(id);
-
         } catch (Exception e) {
             System.out.println("Nhập sai mời nhập lại");
         }
@@ -108,9 +112,11 @@ public class Main {
             System.out.println("Nhập vào số chứng minh thư");
             String id = scanner.nextLine();
             programManager.billRoom(id);
+
         } catch (Exception e) {
             System.out.println("Nhập sai mời nhập lại");
         }
+
     }
 
     public static void edit() {
