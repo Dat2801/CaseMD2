@@ -10,8 +10,8 @@ public class Main {
     static ArrayList<Room> roomList = ReadWriterFile.readFile();
     static ProgramManager programManager = new ProgramManager(roomList);
     static final String REGEX_MENU = "^[0-8]$";
-    static final String REGEX_DATE = "^[0-9]{3}$";
-    static final String REGEX_PRICE = "^[0-9]{7}$";
+    static final String REGEX_DATE = "^[0-9]{2}$";
+    static final String REGEX_PRICE = "^[0-9]{6}$";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -92,6 +92,7 @@ public class Main {
 
         System.out.println("Nhập loại phòng");
         String categoryRoom = scanner.nextLine();
+
         do {
             System.out.println("Nhập giá phòng");
             str1 = scanner.nextLine();
@@ -101,7 +102,7 @@ public class Main {
             }
         } while (!str1.matches(REGEX_PRICE));
 
-        Person person = new Person(name, id, date);
+        Person person = new Person(name, date, id);
 
         Room room = new Room(person, dateRoom, categoryRoom, priceRoom);
         programManager.addRoom(room);
