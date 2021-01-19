@@ -10,8 +10,8 @@ public class ProgramManager {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Room> rooms;
 
-    public ProgramManager(ArrayList<Room> r) {
-        this.rooms = r;
+    public ProgramManager(ArrayList<Room> roomList) {
+        this.rooms = roomList;
     }
 
     public ArrayList<Room> getRooms() {
@@ -39,9 +39,9 @@ public class ProgramManager {
                 , "Giá phòng");
         for (Room room : rooms) {
             System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
-                    , room.getName()
-                    , room.getDate()
-                    , room.getId()
+                    , room.getPerson().getName()
+                    , room.getPerson().getDate()
+                    , room.getPerson().getId()
                     , room.getDateOfStay()
                     , room.getCategoryRoom()
                     , room.getPriceRoom() + "vnđ");
@@ -51,7 +51,7 @@ public class ProgramManager {
 
     public void deleteRoom(String id) {
         for (int i = 0; i < rooms.size(); i++) {
-            if (id.equals(rooms.get(i).getId())) {
+            if (id.equals(rooms.get(i).getPerson().getId())) {
                 rooms.remove(i);
                 i--;
             }
@@ -62,7 +62,7 @@ public class ProgramManager {
 
     public void searchRoom(String id) {
         for (Room room : rooms) {
-            if (id.equals(room.getId())) {
+            if (id.equals(room.getPerson().getId())) {
                 System.out.println("-----------Thông tin khách thuê-----------");
                 System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
                         , "Tên khách thuê"
@@ -71,10 +71,10 @@ public class ProgramManager {
                         , "Ngày trọ"
                         , "Loại phòng"
                         , "Giá phòng");
-                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%"
-                        , room.getName()
-                        , room.getDate()
-                        , room.getId()
+                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s"
+                        , room.getPerson().getName()
+                        , room.getPerson().getDate()
+                        , room.getPerson().getId()
                         , room.getDateOfStay()
                         , room.getCategoryRoom()
                         , room.getPriceRoom() + "vnđ" + "\n");
@@ -84,7 +84,7 @@ public class ProgramManager {
 
     public void billRoom(String id) {
         for (Room room : rooms) {
-            if (id.equals(room.getId())) {
+            if (id.equals(room.getPerson().getId())) {
                 System.out.println("----------Thông tin khách thuê-----------");
                 System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%-20s"
                         , "Tên khách thuê"
@@ -95,9 +95,9 @@ public class ProgramManager {
                         , "Giá phòng"
                         , "Thanh toán");
                 System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%-20s"
-                        , room.getName()
-                        , room.getDate()
-                        , room.getId()
+                        , room.getPerson().getName()
+                        , room.getPerson().getDate()
+                        , room.getPerson().getId()
                         , room.getDateOfStay()
                         , room.getCategoryRoom()
                         , room.getPriceRoom() + "vnđ"
@@ -115,7 +115,7 @@ public class ProgramManager {
     class SortRoom implements Comparator<Room> {
         @Override
         public int compare(Room room1, Room room2) {
-            return room1.getName().compareTo(room2.getName());
+            return room1.getPerson().getName().compareTo(room2.getPerson().getName());
         }
     }
 

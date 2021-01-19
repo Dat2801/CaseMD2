@@ -2,19 +2,29 @@ package model;
 
 import java.io.Serializable;
 
-public class Room extends Person implements Serializable {
+public class Room implements Serializable {
+    private Person person;
     private int dateOfStay;
     private String categoryRoom;
     private double priceRoom;
 
-    public Room(String name, String date, String id, int dateOfStay, String categoryRoom, double priceRoom) {
-        super(name, date, id);
+
+    public Room() {
+    }
+
+    public Room(Person person, int dateOfStay, String categoryRoom, double priceRoom) {
+        this.person = person;
         this.dateOfStay = dateOfStay;
         this.categoryRoom = categoryRoom;
         this.priceRoom = priceRoom;
     }
 
-    public Room() {
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public int getDateOfStay() {
