@@ -34,7 +34,7 @@ public class Person implements Serializable {
         this.date = date;
     }
 
-    public boolean getId() {
+    public String getId() {
         return id;
     }
 

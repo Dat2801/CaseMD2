@@ -58,7 +58,7 @@ public class Room implements Serializable {
     @Override
     public String toString() {
         return "--------Thông tin khách thuê--------" + "\n" +
-                super.toString() +
+                person.toString() +
                 "Số ngày thuê: " + dateOfStay + "\n" +
                 "Loại phòng: " + categoryRoom + "\n" +
                 "Giá phòng: " + priceRoom
