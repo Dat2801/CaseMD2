@@ -9,8 +9,9 @@ import java.util.Scanner;
 public class Main {
     static ArrayList<Room> roomList = ReadWriterFile.readFile();
     static ProgramManager programManager = new ProgramManager(roomList);
-    static final String REGEX = "^[0-8]";
-    static final String REGEX2 = "^[0-9]{4}$";
+    static final String REGEX = "^[0-8]$";
+    static final String REGEX2 = "^[0-9]{3}$";
+    static final String REGEX3 ="^[0-9]{7}$";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -95,10 +96,10 @@ public class Main {
             System.out.println("Nhập giá phòng");
             str1 = scanner.nextLine();
             priceRoom = Double.parseDouble(str1);
-            if (!str1.matches(REGEX2)) {
+            if (!str1.matches(REGEX3)) {
                 System.out.println("Nhập sai mời nhập lại");
             }
-        } while (!str1.matches(REGEX2));
+        } while (!str1.matches(REGEX3));
 
         Person person = new Person(name, id, date);
 
@@ -122,17 +123,11 @@ public class Main {
     }
 
     public static void bill() {
-        try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Nhập vào số chứng minh thư");
             String id = scanner.nextLine();
             programManager.billRoom(id);
-
-        } catch (Exception e) {
-            System.out.println("Nhập sai mời nhập lại");
         }
-
-    }
 
     public static void edit() {
         Scanner scanner = new Scanner(System.in);
