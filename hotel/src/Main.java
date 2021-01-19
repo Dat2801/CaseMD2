@@ -9,14 +9,14 @@ import java.util.Scanner;
 public class Main {
     static ArrayList<Room> roomList = ReadWriterFile.readFile();
     static ProgramManager programManager = new ProgramManager(roomList);
-    static final String REGEX = "^[0-8]$";
-    static final String REGEX2 = "^[0-9]{3}$";
-    static final String REGEX3 ="^[0-9]{7}$";
+    static final String REGEX_MENU = "^[0-8]$";
+    static final String REGEX_DATE = "^[0-9]{3}$";
+    static final String REGEX_PRICE = "^[0-9]{7}$";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
-        String str;
+        String checkMenu;
         do {
             System.out.println("\n" + "----- Chức năng -----");
             System.out.println("1. Thêm khách thuê");
@@ -27,13 +27,13 @@ public class Main {
             System.out.println("6. Sắp xếp theo tên người thuê");
             System.out.println("7. Thanh toán phòng");
             System.out.println("8. Thoát");
+
             do {
                 System.out.println("----- Mời bạn chọn chức năng -----");
-                str = scanner.nextLine();
+                checkMenu = scanner.nextLine();
 
-            } while (!str.matches(REGEX));
-
-            choice = Integer.parseInt(str);
+            } while (!checkMenu.matches(REGEX_MENU));
+            choice = Integer.parseInt(checkMenu);
             switch (choice) {
                 case 1:
                     add();
@@ -85,10 +85,10 @@ public class Main {
             System.out.println("Nhập ngày trọ");
             str1 = scanner.nextLine();
             dateRoom = Integer.parseInt(str1);
-            if (!str1.matches(REGEX2)) {
+            if (!str1.matches(REGEX_DATE)) {
                 System.out.println("Nhập sai mời nhập lại");
             }
-        } while (!str1.matches(REGEX2));
+        } while (!str1.matches(REGEX_DATE));
 
         System.out.println("Nhập loại phòng");
         String categoryRoom = scanner.nextLine();
@@ -96,10 +96,10 @@ public class Main {
             System.out.println("Nhập giá phòng");
             str1 = scanner.nextLine();
             priceRoom = Double.parseDouble(str1);
-            if (!str1.matches(REGEX3)) {
+            if (!str1.matches(REGEX_PRICE)) {
                 System.out.println("Nhập sai mời nhập lại");
             }
-        } while (!str1.matches(REGEX3));
+        } while (!str1.matches(REGEX_PRICE));
 
         Person person = new Person(name, id, date);
 
@@ -123,11 +123,11 @@ public class Main {
     }
 
     public static void bill() {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Nhập vào số chứng minh thư");
-            String id = scanner.nextLine();
-            programManager.billRoom(id);
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào số chứng minh thư");
+        String id = scanner.nextLine();
+        programManager.billRoom(id);
+    }
 
     public static void edit() {
         Scanner scanner = new Scanner(System.in);

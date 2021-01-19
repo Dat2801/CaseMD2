@@ -123,8 +123,8 @@ public class ProgramManager {
         Collections.sort(rooms, new SortRoom());
         System.out.println("----Sắp xếp thành công----");
         ReadWriterFile.writerFile(rooms);
-
     }
+
 }
 
 

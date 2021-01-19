@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Scanner;
 
 public class Person implements Serializable {
 
@@ -35,7 +34,7 @@ public class Person implements Serializable {
         this.date = date;
     }
 
-    public String getId() {
+    public boolean getId() {
         return id;
     }
 
