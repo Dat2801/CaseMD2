@@ -10,7 +10,7 @@ public class Main {
     static ArrayList<Room> roomList = ReadWriterFile.readFile();
     static ProgramManager programManager = new ProgramManager(roomList);
     static final String REGEX_MENU = "^[0-8]$";
-    static final String REGEX_DATE = "^[0-9]{2}$";
+    static final String REGEX_DATE = "^[1-9]$";
     static final String REGEX_PRICE = "^[0-9]{6}$";
 
     public static void main(String[] args) {
